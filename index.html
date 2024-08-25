@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaloCount</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>KaloCount</h1>
+            <button id="settingsBtn">⚙️</button>
+            <button id="statsBtn">📊</button>
+        </header>
+
+        <section id="onboarding">
+            <p>Das Verbrennen von 1 kg Körperfett erfordert ca. 7000 Kalorien.</p>
+            <button id="startOnboarding">Verstanden</button>
+        </section>
+
+        <section id="configuration" class="hidden">
+            <h2>Konfiguration</h2>
+            <label for="gender">Geschlecht:</label>
+            <select id="gender">
+                <option value="male">Männlich</option>
+                <option value="female">Weiblich</option>
+            </select>
+
+            <label for="currentWeight">Aktuelles Gewicht (kg):</label>
+            <input type="number" id="currentWeight" placeholder="z.B. 70">
+
+            <label for="targetWeight">Zielgewicht (kg, optional):</label>
+            <input type="number" id="targetWeight" placeholder="z.B. 65">
+
+            <label for="calorieGoal">Kalorien-Einsparziel (kcal):</label>
+            <input type="number" id="calorieGoal" placeholder="z.B. 35000">
+
+            <button id="startGoalBtn">Ziel Starten</button>
+        </section>
+
+        <section id="counter" class="hidden">
+            <h2>Kalorien-Zähler</h2>
+            <p>Verbleibende Zeit zum Ziel: <span id="timeRemaining">0 Tage, 0 Stunden, 0 Minuten</span></p>
+            <p>Täglicher Brutto-Kalorienverbrauch: <span id="dailyCalorieBurn">0</span> kcal</p>
+
+            <button id="logCaloriesBtn">Kalorien erfassen</button>
+            <button id="logConsumptionBtn">Verbrauch erfassen</button>
+        </section>
+
+        <section id="logCalories" class="hidden">
+            <h2>Kalorien erfassen</h2>
+            <label for="calorieIntake">Eingetragene Kalorien (kcal):</label>
+            <input type="number" id="calorieIntake">
+            <button id="saveCalorieIntake">Speichern</button>
+        </section>
+
+        <section id="logConsumption" class="hidden">
+            <h2>Verbrauch erfassen</h2>
+            <label for="calorieBurned">Verbrannte Kalorien (kcal):</label>
+            <input type="number" id="calorieBurned">
+            <button id="saveCalorieBurned">Speichern</button>
+        </section>
+
+        <section id="stats" class="hidden">
+            <h2>Tagesstatistiken</h2>
+            <ul id="statsList"></ul>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
